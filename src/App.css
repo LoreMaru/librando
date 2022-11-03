@@ -1,38 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Flow+Rounded&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:wght@400;700&display=swap");
+
+* {
+  overflow-x: hidden;
+  box-sizing: border-box;
+  scrollbar-width: auto;
+  scrollbar-color: #a199a3 #fbedd3;
+}
+
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #fbedd3;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #a199a3;
+  border-radius: 10px;
+  border: 3px solid #fbedd3;
+}
+
+a {
+  color: black;
+}
+
 .App {
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.table {
+  position: absolute;
+  padding: 10px 0;
+  width: 100%;
+  height: 99vh;
+  overflow: hidden;
+  z-index: -15;
+  word-break: break-all;
+  font-family: "Flow Rounded", cursive;
+  background: #e6c69c;
+  color: #e8ccac;
+  text-align: justify;
+}
+
+.bookBox {
+  margin-top: 1%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  height: 95vh;
+}
+
+.div1 {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.div2 {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.cover1 {
+  position: absolute;
+  width: 25vw;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(145deg, #e1d9d9, #bdb7b7);
+  border-radius: 5px;
+}
+
+.cover1 div {
+  width: 22vw;
+  height: 87vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  box-shadow: 20px 20px 60px #b3adad, -20px -20px 60px #f2e9e9;
+  font-family: "Macondo Swash Caps", cursive;
+}
+
+.title {
+  color: #4f4e4e;
+  text-shadow: 1px -1px 1px #c0baba;
+}
+
+.titleContainer h1 {
+  font-size: 3rem;
+}
+
+.cover2 {
+  display: none;
+  padding: 25px;
+  width: 25vw;
+  height: 90vh;
+  box-shadow: inset -2px 5px 20px -5px #000000,
+    10px 10px 15px -10px rgba(0, 0, 0, 0.75);
+  font-family: "Gentium Book Plus", serif;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.cover2,
+.cover2::before {
+  background-color: rgb(251, 237, 211);
+  border-radius: 2px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cover2::before {
+  content: "";
+  position: absolute;
+  width: 45vw;
+  height: 87vh;
+  right: 60px;
+  top: 15;
+  transform: rotate(0.5deg);
+  z-index: -1;
+  box-shadow: inset 5px 5px 20px -5px #000000,
+    10px 10px 15px -10px rgba(0, 0, 0, 0.75);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cover2 h3 {
+  cursor: pointer;
+}
+
+.page1 {
+  width: 25vw;
+  height: 90vh;
+  box-shadow: inset 5px 5px 20px -5px #000000,
+    10px 10px 15px -10px rgba(0, 0, 0, 0.75);
+
+  background-color: rgb(251, 237, 211);
+  border-radius: 2px;
+}
+
+.page0 {
+  width: 25vw;
+  height: 90vh;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  box-shadow: inset 5px 5px 20px -5px #000000,
+    10px 10px 15px -10px rgba(0, 0, 0, 0.75);
+
+  background-color: rgb(251, 237, 211);
+  border-radius: 2px;
+  font-family: "Gentium Book Plus", serif;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 414px) {
+  .cover1 {
+    width: 50vw;
   }
-  to {
-    transform: rotate(360deg);
+  .cover1 div {
+    width: 47vw;
+  }
+
+  .cover1 div h1 {
+    font-size: 2em;
+  }
+
+  .cover2 {
+    width: 50vw;
+    padding: 5px;
+  }
+
+  .cover2 h3 {
+    font-size: 0.6em;
+  }
+
+  .page1 {
+    width: 50vw;
+  }
+
+  .page0 {
+    width: 50vw;
   }
 }

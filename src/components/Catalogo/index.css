@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&display=swap");
+
+.Catalogo {
+  font-family: "Macondo Swash Caps", cursive;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  width: 130px;
+  height: 200px;
+  object-fit: cover;
+  border: 1px solid black;
+  filter: grayscale(25%);
+}
